@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-ink font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-vermilion text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-white;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-graphite-950 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Outlined "stencil" display type — used in the hero exhibit frame */
+  .text-stroke-ink {
+    -webkit-text-stroke: 2px #09090b;
+    color: transparent;
+  }
+  .text-stroke-vermilion {
+    -webkit-text-stroke: 2px #e0241b;
+    color: transparent;
+  }
+  @media (min-width: 1024px) {
+    .text-stroke-ink {
+      -webkit-text-stroke-width: 3px;
+    }
+    .text-stroke-vermilion {
+      -webkit-text-stroke-width: 3px;
+    }
+  }
+
+  /* Continuous horizontal marquee track */
+  .marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+  }
+
+  .container-px {
+    @apply px-6 md:px-10 lg:px-16;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---- Directional / styled scroll reveals -------------------------- */
+  [data-reveal] {
+    opacity: 0;
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+  }
+  [data-reveal="up"] {
+    transform: translateY(38px);
+  }
+  [data-reveal="left"] {
+    transform: translateX(-46px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(46px);
+  }
+  [data-reveal="scale"] {
+    transform: scale(0.9);
+  }
+  [data-reveal="blur"] {
+    filter: blur(16px);
+    transform: translateY(22px);
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  /* ---- Line-mask heading reveal ------------------------------------- */
+  .mask-line {
+    overflow: hidden;
+    padding-bottom: 0.12em;
+  }
+  .mask-line > .mask-inner {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mask-line.is-visible > .mask-inner {
+    transform: translateY(0);
+  }
+
+  /* 3D tilt / magnetic helpers driven by hooks */
+  .tilt-3d {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* Make the generative artwork SVG fill its tile (it carries pixel dims so it
+     can also be rasterised into a WebGL texture). */
+  .art-fill svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ---- Custom cursor ------------------------------------------------- */
+  .has-custom-cursor,
+  .has-custom-cursor a,
+  .has-custom-cursor button,
+  .has-custom-cursor [data-cursor],
+  .has-custom-cursor input,
+  .has-custom-cursor textarea,
+  .has-custom-cursor select {
+    cursor: none;
+  }
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    border-radius: 9999px;
+    mix-blend-mode: difference;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    background: #fff;
+    transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+  }
+  .cursor-dot--active {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+  }
+  /* Only the custom cursor when present (touch devices keep native) */
+  @media (hover: none) {
+    .cursor-dot {
+      display: none;
+    }
+  }
+
+  /* ---- Accessibility ------------------------------------------------- */
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: -100px;
+    z-index: 200;
+    border-radius: 0.5rem;
+    background: #09090b;
+    color: #faf9f6;
+    padding: 0.6rem 1rem;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+/* Smooth-scroll (Lenis) — let the library own the scroll position */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid #e0241b;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  [data-reveal],
+  .mask-line > .mask-inner {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .animate-marquee,
+  .animate-scroll-up,
+  .animate-scroll-down {
+    animation: none !important;
+  }
+}
