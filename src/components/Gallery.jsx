@@ -50,10 +50,10 @@ export default function Gallery() {
               className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-vermilion"
             >
               <span className="h-px w-10 bg-vermilion" />
-              Selected Works
+              Documented
             </p>
             <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-ink text-balance md:text-6xl">
-              <span className="mask-inner">A curated wall of art.</span>
+              <span className="mask-inner">In practice&hellip;</span>
             </h2>
           </div>
           <p
@@ -61,7 +61,7 @@ export default function Gallery() {
             data-delay="120"
             className="max-w-xs font-body text-graphite-900/80"
           >
-            A glimpse from our network of 300+ artists — across abstraction,
+            A glimpse from our network of 300+ artists, across abstraction,
             landscape, portraiture and the contemporary.
           </p>
         </div>

@@ -1,26 +1,11 @@
-// Representative testimonials — replace with real client quotes when available.
-const QUOTES = [
-  {
-    quote:
-      "I bought my first painting through Art for Unity with total confidence. They explained the provenance, the artist, the market — nothing was hidden. It now means more to me than its value.",
-    name: "Ananya R.",
-    role: "First-time collector",
-  },
-  {
-    quote:
-      "Their education program changed how my students see the world. Art stopped being intimidating and became a language they could speak.",
-    name: "Prof. Mehta",
-    role: "Educator, Delhi",
-  },
-  {
-    quote:
-      "Rigorous, honest, and deeply knowledgeable about the market. The only advisors I trust to tell me when not to buy.",
-    name: "S. Kapoor",
-    role: "Private investor",
-  },
-];
+// Real client testimonials pending. Do not populate with placeholder quotes;
+// this section should stay empty (or show the note below) until Art for Unity
+// supplies actual testimonials to publish.
+const QUOTES = [];
 
 export default function Testimonials() {
+  if (QUOTES.length === 0) return null;
+
   return (
     <section id="testimonials" className="relative py-16 md:py-24">
       <div className="container-px mx-auto max-w-7xl">
@@ -30,10 +15,10 @@ export default function Testimonials() {
             className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-vermilion"
           >
             <span className="h-px w-10 bg-vermilion" />
-            In Their Words
+            We didn&rsquo;t say anything... They did...
           </p>
           <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-ink text-balance md:text-6xl">
-            <span className="mask-inner">Trusted, the human way.</span>
+            <span className="mask-inner">Because every conversation matters.</span>
           </h2>
         </div>
 

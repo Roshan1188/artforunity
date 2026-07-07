@@ -1,26 +1,26 @@
 const STEPS = [
   {
     no: "01",
-    title: "Discover",
-    body: "Tell us your intent — to learn, to collect, or to invest. We listen first, then map the path that fits you.",
+    title: "Listen",
+    body: "Every engagement starts with understanding. Who you are, what you are building, and where South Asian art fits into that picture.",
     icon: "M12 3v18M3 12h18",
   },
   {
     no: "02",
-    title: "Understand",
-    body: "We decode every work — its context, provenance and authenticity — so you act with clarity, never on hype.",
+    title: "Contextualise",
+    body: "Ninety years of combined experience across practice, curation and the market. We place every conversation within a broader cultural context.",
     icon: "M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z M12 9a3 3 0 100 6 3 3 0 000-6Z",
   },
   {
     no: "03",
-    title: "Curate",
-    body: "A bespoke selection or learning program, matched to your taste, goals and budget — at any scale.",
+    title: "Create",
+    body: "Whether an exhibition, a programme, a partnership or a collection, what we collaborate, adapt and build.",
     icon: "M4 4h16v16H4z M4 9h16 M9 21V9",
   },
   {
     no: "04",
-    title: "Grow",
-    body: "Ongoing advisory as your collection and understanding compound — a relationship, not a transaction.",
+    title: "Nurture",
+    body: "Our relationships don't end with the project. We are in it for the long term, because meaningful cultural exchange takes time.",
     icon: "M3 17l6-6 4 4 8-8 M14 7h7v7",
   },
 ];
@@ -38,7 +38,7 @@ export default function Process() {
             How It Works
           </p>
           <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-ink text-balance md:text-6xl">
-            <span className="mask-inner">From curiosity to collection.</span>
+            <span className="mask-inner">From conversation to collegiality.</span>
           </h2>
         </div>
 

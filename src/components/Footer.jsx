@@ -35,11 +35,11 @@ export default function Footer() {
         <div className="grid gap-12 pb-14 md:grid-cols-2 md:gap-20">
           <div>
             <h3 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
-              Stay in the picture.
+              Let&rsquo;s stay connected.
             </h3>
             <p className="mt-3 max-w-md font-body text-graphite-900/80">
-              Occasional notes on new works, artists and the ideas behind them.
-              No noise — just art worth your time.
+              A quarterly letter on artists, exhibitions and the ideas shaping South
+              Asian contemporary art. Subscribe and we will come to you.
             </p>
             <form onSubmit={subscribe} className="mt-6 flex max-w-md gap-2">
               <input
@@ -60,7 +60,7 @@ export default function Footer() {
             </form>
             {subscribed && (
               <p className="mt-3 font-mono text-xs text-vermilion">
-                Thanks — you're on the list.
+                Thanks, you're on the list.
               </p>
             )}
           </div>
@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Giant kinetic wordmark */}
         <a
           href="#home"
-          aria-label="Art for Unity — back to top"
+          aria-label="Art for Unity, back to top"
           className="block select-none border-t border-ink/10 pt-10"
         >
           <span className="block animate-gradient-pan bg-[linear-gradient(90deg,#09090B,#E0241B,#09090B)] bg-[length:200%_auto] bg-clip-text text-center font-display font-bold uppercase leading-none tracking-tightest text-transparent text-[clamp(2.5rem,14vw,12rem)]">

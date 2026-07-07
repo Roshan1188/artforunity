@@ -6,25 +6,27 @@ const SectionFlow = lazy(() => import("./SectionFlow"));
 const CATEGORIES = [
   {
     no: "01",
-    title: "Art Education",
-    tagline: "Art as a tool for understanding & self-discovery",
-    body: "Comprehending art means understanding people, cultures, history and society. Through specially designed modules and programs, we use the visual language to explore historical, spiritual, environmental, social and political ideas — and to help people of all ages express themselves without pressure or prejudice.",
-    points: [
-      "Bespoke modules & programs",
-      "For all age groups & sectors",
-      "Problem-solving at micro & macro level",
-    ],
+    title: "Curate",
+    tagline: "Exhibitions, presentations and artist platforms",
+    body: "Curation is not simply selection. It is the act of creating the conditions under which a work is encountered, understood and remembered. We build exhibitions and presentations that place South Asian contemporary art in conversation with the world, while platforming the artists whose voices have historically been mediated by others. Every curatorial decision we make begins with the same question: whose terms is this work being seen on?",
   },
   {
     no: "02",
-    title: "Art Dealing",
-    tagline: "The safest long-term investment, when you buy correctly",
-    body: "The global art industry is worth ~$65 billion annually. With decades of hard-earned expertise, we don't just advise which artists to buy — we identify the works that are safest to invest in. We bring authenticity, integrity and credibility, understanding the market as artists, critics, curators, buyers and investment advisors.",
-    points: [
-      "Access to 300+ artists",
-      "Investment-grade advisory",
-      "Every budget catered for",
-    ],
+    title: "Collaborate",
+    tagline: "Partnerships with institutions and organisations",
+    body: "We work with galleries, museums and cultural organisations across South Asia and the UK to build relationships that are genuinely reciprocal. Our collaborations go beyond single exhibitions or tokenistic inclusion. They are long-term curatorial propositions built around shared values, mutual exchange and a commitment to expanding where and how South Asian art is encountered globally.",
+  },
+  {
+    no: "03",
+    title: "Cultivate",
+    tagline: "Climate action, education, access and other global conversations",
+    body: "We design programmes that use art as a language for understanding people, histories and ideas. At the individual level, this means bespoke education programmes across age groups and sectors that make art feel immediate rather than intimidating. At the collective level, it means using South Asian contemporary art as a lens through which to engage with the global challenges that define our moment: climate action, access, equity and belonging. Art, we believe, makes the abstract human.",
+  },
+  {
+    no: "04",
+    title: "Connect",
+    tagline: "Bridging the gap between art and the audiences",
+    body: "We bring artists, works and audiences together in ways that are considered rather than transactional. For individuals and organisations looking to build a meaningful relationship with South Asian art, we offer advisory and acquisition support grounded in curatorial knowledge, provenance research and authentication. What you collect should carry meaning as well as value, and we ensure it does both.",
   },
 ];
 
@@ -45,26 +47,6 @@ function CategoryCard({ c, delay }) {
         {c.tagline}
       </p>
       <p className="mt-6 font-body leading-relaxed text-canvas/80">{c.body}</p>
-
-      <ul className="mt-8 space-y-3 border-t border-white/10 pt-6">
-        {c.points.map((p) => (
-          <li
-            key={p}
-            className="flex items-center gap-3 font-body text-sm text-canvas/90"
-          >
-            <svg
-              className="h-4 w-4 shrink-0 text-vermilion"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            {p}
-          </li>
-        ))}
-      </ul>
 
       {/* Decorative dot */}
       <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-vermilion/0 blur-2xl transition-colors duration-500 group-hover:bg-vermilion/20" />
@@ -91,7 +73,7 @@ export default function Categories() {
             What We Do
           </p>
           <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-balance md:text-6xl">
-            <span className="mask-inner">Two ways we put art to work.</span>
+            <span className="mask-inner">Four ways we translate intention into practice.</span>
           </h2>
         </div>
 

@@ -97,7 +97,7 @@ export default function About() {
               data-delay="220"
               className="mt-6 font-mono text-sm text-graphite-900"
             >
-              — Apoorva Subbanna, <span className="text-ink">Founder</span>
+              Apoorva Subbanna, <span className="text-ink">Founder</span>
             </p>
 
             {/* Stats */}

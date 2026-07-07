@@ -10,7 +10,7 @@ const WHATSAPP_NUMBER = "910000000000"; // TODO: client's real number (intl, no 
 const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx"
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", interest: "Art Education", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", interest: "Curate", message: "" });
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const update = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -29,7 +29,7 @@ export default function Contact() {
         });
         if (!res.ok) throw new Error("bad response");
         setStatus("sent");
-        setForm({ name: "", email: "", interest: "Art Education", message: "" });
+        setForm({ name: "", email: "", interest: "Curate", message: "" });
       } catch {
         setStatus("error");
       }
@@ -37,7 +37,7 @@ export default function Contact() {
     }
 
     // Fallback: open the visitor's mail client pre-filled.
-    const subject = encodeURIComponent(`Art for Unity enquiry — ${form.interest}`);
+    const subject = encodeURIComponent(`Art for Unity enquiry, ${form.interest}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nInterested in: ${form.interest}\n\n${form.message}`
     );
@@ -62,13 +62,13 @@ export default function Contact() {
             </p>
             <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-balance md:text-6xl">
               <span className="mask-inner">
-                Let's build something with{" "}
-                <span className="text-vermilion">art.</span>
+                Let&rsquo;s start a <span className="text-vermilion">conversation.</span>
               </span>
             </h2>
             <p className="mt-8 max-w-md font-body text-lg leading-relaxed text-canvas/80">
-              Whether you want to learn, curate, or invest — tell us what you have in
-              mind. We cater to every art requirement an individual may have.
+              Whether you are an artist, an institution, an educator or a collector,
+              we would like to hear from you. Tell us what you are building, and we
+              will tell you how we can be part of it.
             </p>
 
             <div className="mt-12 space-y-6">
@@ -148,10 +148,10 @@ export default function Contact() {
                   onChange={update}
                   className="w-full cursor-pointer rounded-lg border border-white/15 bg-graphite-950 px-4 py-3 font-body text-canvas focus:border-vermilion focus:outline-none focus:ring-1 focus:ring-vermilion"
                 >
-                  <option>Art Education</option>
-                  <option>Art Dealing / Investment</option>
-                  <option>Curation & Advisory</option>
-                  <option>Something else</option>
+                  <option>Curate</option>
+                  <option>Collaborate</option>
+                  <option>Cultivate</option>
+                  <option>Connect</option>
                 </select>
               </div>
               <div>
@@ -177,7 +177,7 @@ export default function Contact() {
                 {status === "sending"
                   ? "Sending…"
                   : status === "sent"
-                  ? "Sent — thank you"
+                  ? "Sent. Thank you."
                   : "Send enquiry"}
                 <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
@@ -190,7 +190,7 @@ export default function Contact() {
                 }`}
               >
                 {status === "sent" &&
-                  "We've received your enquiry — we'll be in touch shortly."}
+                  "We've received your enquiry. We'll be in touch shortly."}
                 {status === "error" &&
                   "Something went wrong. Please email us directly."}
               </p>

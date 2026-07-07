@@ -7,20 +7,20 @@ const MEMBERS = [
   {
     img: team1,
     name: "Apoorva Subbanna",
-    role: "Founder & Creative Head",
-    bio: "A painter and art writer with a Masters in Visual Arts, awarded the HRD scholarship by the Government of India. Former visiting faculty at NIFT Delhi, she believes art has the potential to touch lives and transform the world.",
+    role: "Founder and Senior Curator",
+    bio: "Founder and Senior Curator of Art for Unity, and the connective tissue between its practice and its purpose. A curator, artist and researcher with fifteen years of transnational experience across South Asia and the UK, her work is rooted in the belief that how art is presented is as political as what is presented. She holds an MA in Curating Contemporary Art from the Royal College of Art, London, and a background in Fine Arts from the University of Baroda and Delhi University. She was also awarded the Young Artists fellowship by the Cultural Ministry, the Government of India. Her curatorial projects span group exhibitions and institutional collaborations across London and India, with a practice that moves fluidly between making, writing and programming. A freelance writer and critic since 2009, she brings equal rigour to the exhibition floor and the page.",
   },
   {
     img: team2,
     name: "Seema Subbanna",
-    role: "Curator & Advisor",
-    bio: "Trained as a designer, she ran one of Delhi's most prominent art galleries and was awarded a Charles Wallace Fellowship attached with The British Museum, V&A and the National Gallery, London. Many artists got their first break with her.",
+    role: "Advisor",
+    bio: "An Art Consultant and Curator whose practice spans over twenty-five years across design, visual merchandising, gallery management and art advisory. Trained as a designer, her early career took her through the Festivals of India textile revival programme, with work exhibited across museums in France, America and Japan. A Charles Wallace India Trust Fellow, she worked with the British Museum, the Victoria and Albert Museum and the National Gallery, London, sharpening a lifelong understanding of how objects are displayed, contextualised and understood. She founded Gallery Ensign in Delhi and eventually transitioned to an independent practice as an art consultant and curator. A Senior Fellow of the Ministry of Culture, Government of India, her fluency across textiles, fine art, sculpture and installation brings a rare combination of experience and intelligence to every conversation at Art for Unity.",
   },
   {
     img: team3,
     name: "Dhruv Saklani",
     role: "Business Development Head",
-    bio: "An MBA from the University of Edinburgh with a focus on strategy and negotiation. With diverse experience across financial services, healthcare and trading, he believes growth is only real when everyone is winning.",
+    bio: "Brings over a decade of entrepreneurial and strategic leadership across financial services, healthcare and trading. Holding an MBA from the University of Edinburgh with a focus on strategy and negotiation, he has built and scaled his own business, with a track record in revenue growth, market analysis and company expansion. At Art for Unity, he brings the commercial rigour and long term thinking that allows the platform to operate sustainably without compromising its curatorial integrity. His conviction is simple: that growth is only meaningful when everyone at the table benefits. It is a principle that shapes every advisory conversation, acquisition and financial partnership the platform enters.",
   },
 ];
 
@@ -41,9 +41,6 @@ function MemberCard({ m, delay }) {
           loading="lazy"
           decoding="async"
         />
-        <div className="absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-ink/90 to-transparent p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <p className="font-body text-sm leading-relaxed text-canvas">{m.bio}</p>
-        </div>
       </div>
       <div className="mt-5">
         <h3 className="font-display text-2xl font-bold tracking-tight text-ink">
@@ -52,6 +49,9 @@ function MemberCard({ m, delay }) {
         <p className="mt-1 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-vermilion">
           <span className="h-1.5 w-1.5 rounded-full bg-vermilion" />
           {m.role}
+        </p>
+        <p className="mt-4 font-body text-sm leading-relaxed text-graphite-900/85">
+          {m.bio}
         </p>
       </div>
     </article>
@@ -73,7 +73,7 @@ export default function Team() {
             </p>
             <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-ink text-balance md:text-6xl">
               <span className="mask-inner">
-                A family that understands art from every angle.
+                Who are we?
               </span>
             </h2>
           </div>
@@ -82,8 +82,9 @@ export default function Team() {
             data-delay="120"
             className="max-w-xs font-body text-graphite-900/80"
           >
-            Artists, curators, critics, buyers and advisors — a rare 360° view of the
-            art world, under one roof.
+            Together we hold every dimension of South Asian art: from studio to
+            institution, from research to collection. That is not a claim. It is 70
+            years of combined practice.
           </p>
         </div>
 
