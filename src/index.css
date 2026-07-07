@@ -153,7 +153,8 @@
     width: 16px;
     height: 16px;
     margin: -8px 0 0 -8px;
-    background: #09090b;
+    background: #808080;
+    mix-blend-mode: difference;
   }
   .cursor-label {
     position: fixed;
