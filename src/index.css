@@ -153,7 +153,8 @@
     width: 16px;
     height: 16px;
     margin: -8px 0 0 -8px;
-    background: #09090b;
+    background: #7a7a7a;
+    mix-blend-mode: difference;
   }
   /* Only the custom cursor when present (touch devices keep native) */
   @media (hover: none) {
