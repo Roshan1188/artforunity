@@ -150,12 +150,11 @@
     z-index: 9999;
     pointer-events: none;
     border-radius: 9999px;
-    mix-blend-mode: difference;
     width: 16px;
     height: 16px;
     margin: -8px 0 0 -8px;
-    background: #fff;
-    transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+    background: #09090b;
+    transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, background-color 0.2s ease;
   }
   .cursor-dot--active {
     width: 36px;

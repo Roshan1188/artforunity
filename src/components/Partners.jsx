@@ -1,15 +1,15 @@
 // Institutions associated with the team's experience (from their bios).
 const PARTNERS = [
-  "Royal College of Art",
-  "Goethe Institute",
-  "Artangel",
-  "The British Museum",
-  "Victoria and Albert Museum",
-  "National Portrait Gallery",
+  "Royal College of Art, London, UK",
+  "Goethe Institut, London, UK",
+  "ArtAngel, London, UK",
+  "The British Museum, London, UK",
+  "Victoria and Albert Museum, London, UK",
+  "National Portrait Gallery, London, UK",
   "Charles Wallace India Trust",
   "Ministry of Culture, Government of India",
-  "NIFT Delhi",
-  "Lalit Kala Akademi",
+  "National Institute of Fashion Technology, Delhi, India",
+  "Lalit Kala Akademi, India",
   "Alliance Française, Delhi, India",
 ];
 
