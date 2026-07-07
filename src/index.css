@@ -153,8 +153,7 @@
     width: 16px;
     height: 16px;
     margin: -8px 0 0 -8px;
-    background: #808080;
-    mix-blend-mode: difference;
+    background: #09090b;
   }
   .cursor-label {
     position: fixed;
@@ -168,7 +167,7 @@
     background: #09090b;
     color: #faf9f6;
     font-family: monospace;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     padding: 6px 14px;
