@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 
 /**
  * Custom art-gallery cursor: a single dot that tracks the pointer directly
- * (no lag) and keeps a fixed size at all times. Over elements tagged with
- * data-cursor-text, a small word label follows the dot instead of resizing
- * it. Only activates on real hover (pointer) devices — touch keeps native
- * input.
+ * (no lag) and keeps a fixed size at all times. Over any link or button, the
+ * dot switches to the accent colour and a small label shows the element's
+ * own text (or a custom data-cursor-text override) beside it. Only activates
+ * on real hover (pointer) devices — touch keeps native input.
  */
 export default function Cursor() {
   const dotRef = useRef(null);
@@ -23,15 +23,20 @@ export default function Cursor() {
       label.style.transform = pos;
     };
     const over = (e) => {
-      const target = e.target.closest("[data-cursor-text]");
+      const target = e.target.closest("a, button, [data-cursor-text]");
       if (!target) return;
-      label.textContent = target.getAttribute("data-cursor-text");
-      label.classList.add("cursor-label--active");
+      dot.classList.add("cursor-dot--hover");
+      const text = target.getAttribute("data-cursor-text") || target.textContent.trim();
+      if (text) {
+        label.textContent = text;
+        label.classList.add("cursor-label--active");
+      }
     };
     const out = (e) => {
-      if (e.target.closest("[data-cursor-text]")) {
-        label.classList.remove("cursor-label--active");
-      }
+      const target = e.target.closest("a, button, [data-cursor-text]");
+      if (!target) return;
+      dot.classList.remove("cursor-dot--hover");
+      label.classList.remove("cursor-label--active");
     };
 
     window.addEventListener("pointermove", move);
