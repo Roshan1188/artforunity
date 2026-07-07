@@ -18,7 +18,7 @@ export default function About() {
           {/* Image */}
           <div
             data-reveal="left"
-            className="relative order-2 mx-auto w-full max-w-[240px] lg:sticky lg:top-28 lg:order-1 lg:mx-0 lg:self-start"
+            className="relative order-2 mx-auto w-full max-w-[300px] lg:sticky lg:top-28 lg:order-1 lg:mx-0 lg:self-start"
           >
             <div
               ref={tilt}
@@ -34,9 +34,9 @@ export default function About() {
                 decoding="async"
               />
             </div>
-            <div className="absolute -bottom-6 -right-4 hidden animate-float rounded-xl bg-vermilion px-6 py-5 text-canvas shadow-xl md:block">
-              <p className="font-display text-3xl font-bold leading-none">A4U</p>
-              <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em]">
+            <div className="absolute -bottom-4 -right-3 hidden max-w-[65%] animate-float rounded-lg bg-vermilion px-3.5 py-2.5 text-canvas shadow-xl md:block">
+              <p className="font-display text-lg font-bold leading-none">A4U</p>
+              <p className="mt-1 font-mono text-[8px] uppercase leading-snug tracking-[0.15em]">
                 Bringing people together
               </p>
             </div>
