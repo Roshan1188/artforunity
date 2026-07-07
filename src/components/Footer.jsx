@@ -95,18 +95,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Giant kinetic wordmark */}
-        <a
-          href="#home"
-          aria-label="Art for Unity, back to top"
-          className="block select-none border-t border-ink/10 pt-10"
-        >
-          <span className="block animate-gradient-pan bg-[linear-gradient(90deg,#09090B,#E0241B,#09090B)] bg-[length:200%_auto] bg-clip-text text-center font-display font-bold uppercase leading-none tracking-tightest text-transparent text-[clamp(2.5rem,14vw,12rem)]">
-            Art for Unity
-          </span>
-        </a>
-
-        {/* Legacy: places that shaped the practice — sits below the company logo */}
+        {/* Legacy: places that shaped the practice */}
         <Partners />
 
         {/* Bottom bar */}
