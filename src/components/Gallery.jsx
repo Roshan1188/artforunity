@@ -119,8 +119,8 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+        {/* Grid — masonry columns so every photo shows uncropped at its own aspect ratio */}
+        <div className="columns-2 gap-4 md:columns-3 md:gap-6 lg:columns-4">
           {shown.map((w, i) => (
             <button
               key={w.id}
@@ -128,7 +128,7 @@ export default function Gallery() {
               data-delay={(i % 4) * 90}
               data-cursor
               onClick={() => setActive(w)}
-              className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-ink/10 bg-graphite-900 text-left"
+              className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-ink/10 bg-graphite-900 text-left md:mb-6"
               aria-label={`View ${w.type}, ${w.project}, ${w.venue}, ${w.year}`}
             >
               <img
@@ -136,7 +136,7 @@ export default function Gallery() {
                 alt={`${w.type}, ${w.project}, ${w.venue}, ${w.year}`}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Cinematic hover overlay */}
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/85 via-ink/10 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -170,11 +170,11 @@ export default function Gallery() {
             className="relative grid max-h-[88vh] w-full max-w-4xl animate-fade-up overflow-hidden rounded-2xl bg-white shadow-2xl md:grid-cols-[1.3fr_1fr]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="aspect-[4/5] bg-graphite-900">
+            <div className="flex max-h-[70vh] items-center justify-center bg-graphite-900 md:max-h-[88vh]">
               <img
                 src={active.img}
                 alt={`${active.type}, ${active.project}, ${active.venue}, ${active.year}`}
-                className="h-full w-full object-cover"
+                className="max-h-[70vh] w-full object-contain md:max-h-[88vh]"
               />
             </div>
             <div className="flex flex-col justify-center gap-3 p-8 md:p-10">
