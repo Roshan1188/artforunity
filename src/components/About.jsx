@@ -18,7 +18,7 @@ export default function About() {
           {/* Image */}
           <div
             data-reveal="left"
-            className="relative order-2 mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:order-1 lg:mx-0 lg:self-start"
+            className="relative order-2 mx-auto w-full max-w-[240px] lg:sticky lg:top-28 lg:order-1 lg:mx-0 lg:self-start"
           >
             <div
               ref={tilt}
