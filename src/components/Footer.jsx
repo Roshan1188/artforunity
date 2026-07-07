@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/logo.webp";
+import Partners from "./Partners";
 
 const LINKS = [
   { label: "About", href: "#about" },
@@ -104,6 +105,9 @@ export default function Footer() {
             Art for Unity
           </span>
         </a>
+
+        {/* Legacy: places that shaped the practice — sits below the company logo */}
+        <Partners />
 
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-ink/10 py-8 md:flex-row">

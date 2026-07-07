@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import About from "./components/About";
-import Partners from "./components/Partners";
 import Categories from "./components/Categories";
 import Process from "./components/Process";
 import Gallery from "./components/Gallery";
@@ -42,7 +41,6 @@ export default function App() {
           <Hero entered={loaded} />
           <Marquee />
           <About />
-          <Partners />
           <Categories />
           <Process />
           <Gallery />

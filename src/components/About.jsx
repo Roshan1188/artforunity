@@ -14,15 +14,15 @@ export default function About() {
   return (
     <section id="about" className="relative py-16 md:py-24">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
           <div
             data-reveal="left"
-            className="relative order-2 lg:order-1"
+            className="relative order-2 lg:sticky lg:top-28 lg:order-1 lg:self-start"
           >
             <div
               ref={tilt}
-              className="tilt-3d overflow-hidden rounded-2xl border border-ink/10 shadow-xl shadow-ink/5"
+              className="tilt-3d aspect-[4/5] overflow-hidden rounded-2xl border border-ink/10 shadow-xl shadow-ink/5"
             >
               <img
                 src={aboutImg}

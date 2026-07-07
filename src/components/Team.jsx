@@ -1,4 +1,4 @@
-import team1 from "../assets/team1.webp";
+import team1 from "../assets/apoorva.jpg";
 import team2 from "../assets/team2.webp";
 import team3 from "../assets/team3.webp";
 import useTilt from "../hooks/useTilt";
