@@ -62,33 +62,28 @@ export default function About() {
                 where, and under what conditions it was seen, collected and understood.
                 For decades, the frameworks through which South Asian art entered global
                 conversations were built by others, presented on terms that were rarely
-                its own. The result was representation without authorship. Visibility
-                without voice.
+                its own. The result was representation without authorship, visibility
+                without voice. Art for Unity was founded on the belief that this needs to
+                change, and that changing it requires more than good intentions. It
+                requires building the conditions through which artists, organisations and
+                institutions can lead cultural conversations rather than simply
+                participate in them. We are an independent curatorial platform, founded
+                across South Asia and the UK, working at the intersection of practice,
+                education, collaboration and exchange.
               </p>
-              <p data-reveal="up" data-delay="160">
-                Art for Unity was founded on the belief that this needs to change, and
-                that changing it requires more than good intentions. It requires building
-                the conditions through which artists, organisations and institutions can
-                lead cultural conversations rather than simply participate in them. We
-                are an independent curatorial platform, founded across South Asia and the
-                UK, working at the intersection of practice, education, collaboration and
-                exchange.
-              </p>
-              <p data-reveal="up" data-delay="240">
+              <p data-reveal="up" data-delay="200">
                 What we do is both simple and structural. We work with contemporary
                 artists across South Asia to create the spaces, programmes and
                 partnerships through which their work is encountered on its own terms. We
                 collaborate with institutions, galleries and organisations globally to
                 build relationships that go beyond single transactions or tokenistic
                 inclusion. We design education programmes that use art as a tool for
-                understanding people, histories and ideas. And we bridge the distance
+                understanding people, histories and ideas, and we bridge the distance
                 between art and the audiences it was always meant to reach, including
                 those who have never thought of themselves as collectors, students or
-                participants in the art world.
-              </p>
-              <p data-reveal="up" data-delay="320">
-                The question we began with was not what South Asian art is. It was who
-                gets to decide. Everything we build is an answer to that.
+                participants in the art world. The question we began with was not what
+                South Asian art is. It was who gets to decide. Everything we build is an
+                answer to that.
               </p>
             </div>
 
