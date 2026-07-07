@@ -126,7 +126,7 @@ export default function Gallery() {
               key={w.id}
               data-reveal="scale"
               data-delay={(i % 4) * 90}
-              data-cursor
+              data-cursor-text="View"
               onClick={() => setActive(w)}
               className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-ink/10 bg-graphite-900 text-left md:mb-6"
               aria-label={`View ${w.type}, ${w.project}, ${w.venue}, ${w.year}`}
