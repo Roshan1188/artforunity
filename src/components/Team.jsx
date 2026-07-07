@@ -1,6 +1,6 @@
 import team1 from "../assets/apoorva.jpg";
-import team2 from "../assets/team2.webp";
-import team3 from "../assets/team3.webp";
+import team2 from "../assets/seema.jpg";
+import team3 from "../assets/dhruv.jpg";
 import useTilt from "../hooks/useTilt";
 
 const MEMBERS = [
