@@ -1,31 +1,67 @@
 import { useEffect, useState } from "react";
-import ArtPiece from "./ArtPiece";
-import RippleImage from "./RippleImage";
-import { buildArtSvg } from "../lib/buildArtSvg";
+
+import feedbackArtists01 from "../assets/gallery/feedback-artists-01.jpg";
+import feedback02 from "../assets/gallery/feedback-02.jpg";
+import feedback03 from "../assets/gallery/feedback-03.jpg";
+import feedback04 from "../assets/gallery/feedback-04.jpg";
+import colorfables01 from "../assets/gallery/colorfables-01.jpg";
+import feedback05 from "../assets/gallery/feedback-05.jpg";
+import diasporicarchive01 from "../assets/gallery/diasporicarchive-01.jpg";
+import manyfolds01 from "../assets/gallery/manyfolds-01.jpg";
+import steponepause01 from "../assets/gallery/steponepause-01.jpg";
+import steponepause02 from "../assets/gallery/steponepause-02.jpg";
+import alliancefrancaise01 from "../assets/gallery/alliancefrancaise-01.png";
+import alliancefrancaise02 from "../assets/gallery/alliancefrancaise-02.jpg";
+import thinskinnedArtists01 from "../assets/gallery/thinskinned-artists-01.jpg";
+import archive201401 from "../assets/gallery/archive-2014-01.jpg";
+import manyfolds02 from "../assets/gallery/manyfolds-02.jpg";
+import diasporicarchiveArtists01 from "../assets/gallery/diasporicarchive-artists-01.jpg";
+import thinskinned01 from "../assets/gallery/thinskinned-01.jpg";
+import thinskinned02 from "../assets/gallery/thinskinned-02.jpg";
+import colorfables02 from "../assets/gallery/colorfables-02.jpg";
 
 /**
- * Curated works gallery — filterable grid of pieces with a zoom lightbox.
- * Pieces are generative placeholders (see ArtPiece); swap with real artwork
- * by giving each entry an image and rendering an <img> instead of <ArtPiece>.
+ * Documented — real photography from Art for Unity's exhibitions, programmes
+ * and events. Each entry carries: type, project name, venue, year.
  */
 const WORKS = [
-  { id: 1, title: "Crimson Confluence", artist: "Apoorva Subbanna", year: "2024", medium: "Acrylic on canvas", cat: "Abstract", palette: ["#1b1b1f", "#3a1410", "#E0241B", "#7a1610", "#f4d9c8"] },
-  { id: 2, title: "Monsoon Letters", artist: "R. Venkataraman", year: "2023", medium: "Oil on linen", cat: "Landscape", palette: ["#0e2230", "#16404f", "#2f9e9e", "#d8b15a", "#eef0e8"] },
-  { id: 3, title: "Untitled (Self)", artist: "Meher Kaur", year: "2024", medium: "Charcoal & gold leaf", cat: "Portrait", palette: ["#1a1714", "#2e2620", "#caa14a", "#7c5a2a", "#efe7d6"] },
-  { id: 4, title: "Quiet Riot", artist: "D. Saklani", year: "2022", medium: "Mixed media", cat: "Abstract", palette: ["#14121c", "#2a1840", "#7b4bd1", "#E0241B", "#e9e2f2"] },
-  { id: 5, title: "Coastline Study", artist: "Seema Subbanna", year: "2023", medium: "Watercolour", cat: "Landscape", palette: ["#16241a", "#1f3b2a", "#5fa86a", "#d8c27a", "#eef2ea"] },
-  { id: 6, title: "Ochre Hours", artist: "Imran Q.", year: "2024", medium: "Pigment on paper", cat: "Contemporary", palette: ["#2a1408", "#4a2410", "#d2762a", "#8a2d18", "#f2e3d2"] },
-  { id: 7, title: "The Listener", artist: "Meher Kaur", year: "2023", medium: "Oil on canvas", cat: "Portrait", palette: ["#181a20", "#22303a", "#4a7fa3", "#c2483c", "#e8edf0"] },
-  { id: 8, title: "Field of Vermilion", artist: "Apoorva Subbanna", year: "2024", medium: "Acrylic & ink", cat: "Contemporary", palette: ["#1b1410", "#3a1a14", "#E0241B", "#caa14a", "#f3e6d8"] },
+  { id: 1, img: feedbackArtists01, type: "Group photograph", project: "Feed Back", venue: "Royal College of Art x Artangel, London", year: "2025" },
+  { id: 2, img: feedback02, type: "Exhibition view", project: "Feed Back", venue: "Royal College of Art x Artangel, London", year: "2025" },
+  { id: 3, img: feedback03, type: "Exhibition view", project: "Feed Back", venue: "Royal College of Art x Artangel, London", year: "2025" },
+  { id: 4, img: feedback04, type: "Exhibition view", project: "Feed Back", venue: "Royal College of Art x Artangel, London", year: "2025" },
+  { id: 5, img: feedback05, type: "Exhibition view", project: "Feed Back", venue: "Royal College of Art x Artangel, London", year: "2025" },
+  { id: 6, img: diasporicarchive01, type: "Exhibition view", project: "The Diasporic Archive", venue: "London", year: "2025" },
+  { id: 7, img: diasporicarchiveArtists01, type: "Group photograph", project: "The Diasporic Archive", venue: "London", year: "2025" },
+  { id: 8, img: thinskinnedArtists01, type: "Group photograph", project: "Thin Skinned: A fleur de peau", venue: "London", year: "2025" },
+  { id: 9, img: thinskinned01, type: "Exhibition view", project: "Thin Skinned: A fleur de peau", venue: "London", year: "2025" },
+  { id: 10, img: thinskinned02, type: "Exhibition view", project: "Thin Skinned: A fleur de peau", venue: "London", year: "2025" },
+  { id: 11, img: steponepause01, type: "Programme", project: "Step One: Pause to Share", venue: "Goethe Institute, London", year: "2025" },
+  { id: 12, img: steponepause02, type: "Programme", project: "Step One: Pause to Share", venue: "Goethe Institute, London", year: "2025" },
+  { id: 13, img: colorfables01, type: "Installation view", project: "Color Fables", venue: "Museo Camera", year: "2023" },
+  { id: 14, img: colorfables02, type: "Installation view", project: "Color Fables", venue: "Museo Camera, India", year: "2023" },
+  { id: 15, img: manyfolds01, type: "Installation view", project: "Many Folds I", venue: "Museo Camera, Gurgaon", year: "2022" },
+  { id: 16, img: manyfolds02, type: "Installation view", project: "Many Folds I", venue: "Museo Camera, Gurgaon", year: "2022" },
+  { id: 17, img: alliancefrancaise01, type: "Event", project: "Archive", venue: "Alliance Française, Delhi", year: "2021" },
+  { id: 18, img: alliancefrancaise02, type: "Event", project: "Archive", venue: "Alliance Française, Delhi", year: "2021" },
+  { id: 19, img: archive201401, type: "Archive", project: "Archive", venue: "India", year: "2014" },
 ];
 
-const FILTERS = ["All", "Abstract", "Landscape", "Portrait", "Contemporary"];
+const FILTERS = [
+  "All",
+  "Feed Back",
+  "The Diasporic Archive",
+  "Thin Skinned: A fleur de peau",
+  "Step One: Pause to Share",
+  "Color Fables",
+  "Many Folds I",
+  "Archive",
+];
 
 export default function Gallery() {
   const [filter, setFilter] = useState("All");
   const [active, setActive] = useState(null);
 
-  const shown = WORKS.filter((w) => filter === "All" || w.cat === filter);
+  const shown = WORKS.filter((w) => filter === "All" || w.project === filter);
 
   useEffect(() => {
     if (!active) return;
@@ -61,8 +97,8 @@ export default function Gallery() {
             data-delay="120"
             className="max-w-xs font-body text-graphite-900/80"
           >
-            A glimpse from our network of 300+ artists, across abstraction,
-            landscape, portraiture and the contemporary.
+            A glimpse from our exhibitions, programmes and events across South
+            Asia and the UK.
           </p>
         </div>
 
@@ -93,18 +129,22 @@ export default function Gallery() {
               data-cursor
               onClick={() => setActive(w)}
               className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-ink/10 bg-graphite-900 text-left"
-              aria-label={`View ${w.title} by ${w.artist}`}
+              aria-label={`View ${w.type}, ${w.project}, ${w.venue}, ${w.year}`}
             >
-              <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-110">
-                <ArtPiece seed={w.id * 1337 + 7} palette={w.palette} />
-              </div>
+              <img
+                src={w.img}
+                alt={`${w.type}, ${w.project}, ${w.venue}, ${w.year}`}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
               {/* Cinematic hover overlay */}
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/85 via-ink/10 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="translate-y-3 font-display text-base font-bold text-canvas transition-transform duration-300 group-hover:translate-y-0">
-                  {w.title}
+                  {w.project}
                 </p>
                 <p className="translate-y-3 font-mono text-[10px] uppercase tracking-[0.15em] text-canvas/70 transition-transform delay-75 duration-300 group-hover:translate-y-0">
-                  {w.artist} · {w.year}
+                  {w.venue} · {w.year}
                 </p>
               </div>
               <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -124,26 +164,29 @@ export default function Gallery() {
           onClick={() => setActive(null)}
           role="dialog"
           aria-modal="true"
-          aria-label={`${active.title} by ${active.artist}`}
+          aria-label={`${active.project}, ${active.venue}, ${active.year}`}
         >
           <div
             className="relative grid max-h-[88vh] w-full max-w-4xl animate-fade-up overflow-hidden rounded-2xl bg-white shadow-2xl md:grid-cols-[1.3fr_1fr]"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="aspect-[4/5] bg-graphite-900">
-              <RippleImage svg={buildArtSvg(active.id * 1337 + 7, active.palette)} />
+              <img
+                src={active.img}
+                alt={`${active.type}, ${active.project}, ${active.venue}, ${active.year}`}
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="flex flex-col justify-center gap-3 p-8 md:p-10">
               <p className="font-mono text-xs uppercase tracking-[0.25em] text-vermilion">
-                {active.cat}
+                {active.type}
               </p>
               <h3 className="font-display text-3xl font-bold leading-tight text-ink md:text-4xl">
-                {active.title}
+                {active.project}
               </h3>
               <p className="font-body text-graphite-900">
-                {active.artist} · {active.year}
+                {active.venue} · {active.year}
               </p>
-              <p className="font-mono text-sm text-graphite-900/70">{active.medium}</p>
               <a
                 href="#contact"
                 onClick={() => setActive(null)}

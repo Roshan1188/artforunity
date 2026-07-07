@@ -18,7 +18,7 @@ export default function About() {
           {/* Image */}
           <div
             data-reveal="left"
-            className="relative order-2 lg:sticky lg:top-28 lg:order-1 lg:self-start"
+            className="relative order-2 mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:order-1 lg:mx-0 lg:self-start"
           >
             <div
               ref={tilt}
@@ -53,7 +53,7 @@ export default function About() {
             </p>
             <h2 className="mask-line font-display text-4xl font-bold leading-tight tracking-tight text-ink text-balance md:text-5xl">
               <span className="mask-inner">
-                “Art is not always about pretty things. It is about who we are.”
+                “Art has never been neutral.”
               </span>
             </h2>
             <div className="mt-8 space-y-5 font-body text-base leading-relaxed text-graphite-900/90 md:text-lg">
