@@ -8,13 +8,13 @@ const STEPS = [
   {
     no: "02",
     title: "Contextualise",
-    body: "Ninety years of combined experience across practice, curation and the market. We place every conversation within a broader cultural context.",
+    body: "Seventy years of combined experience across practice, curation and the market. We place every conversation within a broader cultural context.",
     icon: "M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z M12 9a3 3 0 100 6 3 3 0 000-6Z",
   },
   {
     no: "03",
     title: "Create",
-    body: "Whether an exhibition, a programme, a partnership or a collection, what we collaborate, adapt and build.",
+    body: "Whether an exhibition, a programme, a partnership or a collection — we collaborate, adapt and build.",
     icon: "M4 4h16v16H4z M4 9h16 M9 21V9",
   },
   {

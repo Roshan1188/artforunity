@@ -8,11 +8,22 @@ const ROTATING = ["language", "bridge", "platform"];
 
 function RotatingWord() {
   const [i, setI] = useState(0);
+  const [reduced, setReduced] = useState(false);
+
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setReduced(true);
+      return;
+    }
     const t = setInterval(() => setI((p) => (p + 1) % ROTATING.length), 2600);
     return () => clearInterval(t);
   }, []);
+
+  // Reduced motion: show the first word statically, never animate it away.
+  if (reduced) {
+    return <span className="text-vermilion">{ROTATING[0]}</span>;
+  }
+
   return (
     <span className="relative inline-flex overflow-hidden align-bottom text-vermilion">
       {/* invisible sizer keeps the line from jumping */}

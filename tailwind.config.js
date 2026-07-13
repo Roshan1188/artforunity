@@ -58,7 +58,7 @@ export default {
         },
         "word-cycle": {
           "0%": { transform: "translateY(110%)", opacity: "0" },
-          "12%, 88%": { transform: "translateY(0)", opacity: "1" },
+          "8%, 94%": { transform: "translateY(0)", opacity: "1" },
           "100%": { transform: "translateY(-110%)", opacity: "0" },
         },
         "scroll-up": {
